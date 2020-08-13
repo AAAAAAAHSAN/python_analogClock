@@ -1,11 +1,12 @@
 import turtle
 import time
 
-wndw = turtle.Screen()
-wndw.bgcolor("cyan")
-wndw.setup(width=600,height=600)
-wndw.title("Analog Clock by Ahsan")
-wndw.tracer(0)
+mainWindow = turtle.Screen()
+mainWindow.bgcolor("#fff321")
+#mainWindow.bgpic("clock.gif")
+mainWindow.setup(width=600,height=600)
+mainWindow.title("Analog Clock by Ahsan")
+mainWindow.tracer(0)
 
 # Create the drawing pen
 pen = turtle.Turtle()
@@ -37,7 +38,7 @@ def draw_clock(hr,mn,sec,pen):
 
     # Draw the hands
     # Each tuple in list hands describe the color, the length ans the divisor for the angle
-    hands = [("white",80,12),("blue",120,60),("red",140,60)]
+    hands = [("grey",80,12),("blue",120,60),("red",140,60)]
     time_set = (hr, mn, sec)
 
     for hand in hands:
@@ -59,8 +60,8 @@ while True:
     sec=int(time.strftime("%S"))
 
     draw_clock(hr,mn,sec,pen)
-    wndw.update()
+    mainWindow.update()
     time.sleep(1)
     pen.clear()
 
-wndw.mainloop();
+mainWindow.mainloop();
